@@ -1,8 +1,7 @@
 #include <iostream>
 
 #include "multiplyFunctions.h"
-#include "Timer.h"
-
+#include "timer.h"
 int main()
 {
     std::vector<std::vector<int>> t1m1 =
