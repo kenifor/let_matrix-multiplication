@@ -1,7 +1,6 @@
 #include <iostream>
 
 #include "multiplyFunctions.h"
-#include "timer.h"
 int main()
 {
     std::vector<std::vector<int>> t1m1 =
@@ -63,21 +62,11 @@ int main()
         {7, 1}
     };
 
-    Timer timer;
-
-    //timer.
 
     Matrix m3;
-    
-    // start
-    timer.start();
     m3 = multiplyTwoMatrixes(t1m1, t1m2);
-    timer.stop();
-    //  stop timer
-    // print time of timer
 
     printMatrix(m3);
-    std::cout << "Time of multiply: " << timer.getTime() << std::endl;
 
     m3 = multiplyTwoMatrixes(t2m1, t2m2);
     printMatrix(m3);
