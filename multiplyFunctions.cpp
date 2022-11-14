@@ -68,10 +68,6 @@ Matrix multiplyTwoMatrixes(const Matrix & M1,const Matrix & M2)
 
     //calculateNewMatrix(M1, M2, M3);
 
-    //for (int i = 0; i < M3_rows; i++)
-    //{
-    //    calculateNewRow(M1, M2, M3);
-    //}
     return M3;
 }
 
@@ -103,12 +99,6 @@ void calculateNewMatrix(const Matrix& M1, const Matrix& M2, Matrix& M3)
     std::cout << "r=" << r << std::endl;
     std::cout << "c=" << c << std::endl;
 
-    //if (r >= M3_rows)
-    //{
-    //    r = 0;
-    //    c = 0;
-    //}
-
     if (c != 0)
         ++c;
 
@@ -118,7 +108,6 @@ void calculateNewMatrix(const Matrix& M1, const Matrix& M2, Matrix& M3)
         c = 0;
     }
 
-    //mtx.unlock();
 
     while (r < M3_rows)
     {
@@ -132,18 +121,8 @@ void calculateNewMatrix(const Matrix& M1, const Matrix& M2, Matrix& M3)
 
             mtx.unlock();
 
-            //std::cout << "threadID: " << std::this_thread::get_id() << std::endl;
-            //std::cout << "row: " << row << " r: " << r << std::endl;
-            //std::cout << "col: " << col << " c: " << c << std::endl;
-
             for (int k = 0; k < M3_cols; k++)
             {
-                //mtx.lock();
-                //M3[r][c] += M1[r][k] * M2[k][c];
-                //mtx.unlock();
-
-                //if (row >= M3_rows || col >= M3_cols)
-                //    break;
 
                 M3[row][col] += M1[row][k] * M2[k][col];
             }
@@ -160,21 +139,6 @@ void calculateNewMatrix(const Matrix& M1, const Matrix& M2, Matrix& M3)
     }
 
     mtx.unlock();
-
-    //for (int c = 0; c < M3_cols; c++)
-    //{
-    //    for (int i = 0; i < M3_cols; i++)
-    //    {
-    //        M3[r][c] += M1[r][i] * M2[i][c];
-    //    }
-    //}
-
-    //int M3_rows = M1.size();
-
-    //for (int i = 0; i < M3_rows; i++)
-    //{
-    //    calculateNewRow(M1, M2, M3);
-    //}
 }
 
 Matrix createMatrix(int size, IntGenerator& generator)
