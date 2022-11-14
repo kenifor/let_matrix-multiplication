@@ -6,22 +6,6 @@
 #include <time.h>
 
 
-/* TIMER
- *
- * #include <time.h>
- *
- * clock_t start, end;
- *
- * start = clock();
- *
- * // some operation
- *
- * end = clock();
- *
- * float time = static_cast<float>(end-start) / CLOCKS_PER_SEC;
- *
- * */
-
 void resultTest()
 {
     IntGenerator gena;
@@ -72,10 +56,6 @@ void resultTest1()
     Matrix m3 = multiplyTwoMatrixes(m1, m2);
     printMatrix(m3);
 
-    /*
-     * 4    17
-     * 17   31
-     * */
 }
 
 int main()
