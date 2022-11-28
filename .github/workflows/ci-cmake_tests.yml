@@ -14,14 +14,14 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Configure CMake
-      run: cmake -S $GITHUB_WORKSPACE -B ${{runner.workspace}}/build
+      run: C:\Users\я\Desktop\myltpl_matrix\let_matrix-multiplication-main
 
     - name: Build
-      working-directory: ${{runner.workspace}}/build
+      working-directory: C:\Users\я\Desktop\myltpl_matrix\let_matrix-multiplication-main
       run: cmake --build .
 
     - name: Test
-      working-directory: ${{runner.workspace}}/build
+      working-directory: C:\Users\я\Desktop\myltpl_matrix\let_matrix-multiplication-main
       run: GTEST_OUTPUT=xml:test-results/ GTEST_COLOR=1 ctest -V
 
     - name: Upload test results
