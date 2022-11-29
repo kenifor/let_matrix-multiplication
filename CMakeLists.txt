@@ -13,6 +13,8 @@ set(TEST_DIR Tests)
 
 include_directories(${HEADERS_DIR})
 
+find_package(Threads REQUIRED)
+
 set(HEADERS
     ${HEADERS_DIR}/Cell.h
     ${HEADERS_DIR}/IntGenerator.h
@@ -28,6 +30,10 @@ add_executable(${PROJECT_NAME}
     ${SOURCES_DIR}/main.cpp
     ${SOURCES}
     ${HEADERS}
+)
+
+target_link_libraries(${PROJECT_NAME}
+    Threads::Threads
 )
 
 if (ENABLE_UNIT_TESTS)
