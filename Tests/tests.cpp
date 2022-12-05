@@ -80,6 +80,24 @@ TEST(MultiplyTwoEmptyMatrixes, rows_not_equal_columns) {
     ASSERT_EQ(matrix3, result);
 }
 
+TEST(MultiplyTwoEmptyMatrixes2, rows_not_equal_columns) {
+    Matrix matrix1{
+        {100, 7, 0},
+        {6, 1, 10},
+        {4, 11, 8}
+    };
+    Matrix matrix2{
+        {1, 0, 0},
+        {0, 1, 0},
+        {0, 0, 1}
+    };
+
+    Matrix matrix3 = multiplyTwoMatrixes(matrix1, matrix2, THREADS_COUNT);
+    auto result = Matrix();
+
+    ASSERT_EQ(matrix3, matrix1);
+}
+
 int main(int argc, char **argv)
 {
     testing::InitGoogleTest(&argc, argv);
